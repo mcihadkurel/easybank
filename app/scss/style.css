@@ -1,3 +1,77 @@
+.has-fade {
+  visibility: hidden;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 200ms ease-in-out fowards;
+          animation: fade-in 200ms ease-in-out fowards;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 300ms ease-in-out fowards;
+          animation: fade-out 300ms ease-in-out fowards;
+}
+
 html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
@@ -25,6 +99,11 @@ a,
 a:visited,
 a:hover {
   text-decoration: none;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .flex {
@@ -75,24 +154,29 @@ button,
   }
 }
 
-.header.open .header_menu > span:first-child {
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+.header.open .header_toggle > span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.header.open .header_menu > span:nth-child(2) {
+.header.open .header_toggle > span:nth-child(2) {
   opacity: 0;
 }
 
-.header.open .header_menu > span:last-child {
+.header.open .header_toggle > span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
 .header .overlay {
-  display: none;
+  opacity: 0;
   position: fixed;
-  top: 3.75em;
+  top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
@@ -101,7 +185,10 @@ button,
 }
 
 .header nav {
-  padding: 1.0635rem 1.5rem;
+  position: relative;
+  background-color: white;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 
 .header_logo img {
@@ -109,7 +196,7 @@ button,
   height: 1.375rem;
 }
 
-.header_menu > span {
+.header_toggle > span {
   display: block;
   width: 26px;
   height: 2px;
@@ -120,16 +207,35 @@ button,
           transform-origin: 3px 1px;
 }
 
-.header_menu > span:not(:last-child) {
+.header_toggle > span:not(:last-child) {
   margin-bottom: 5px;
+}
+
+.header_menu {
+  position: absolute;
+  width: calc(100% - 3rem);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: white;
+  margin-top: 1.5rem;
+  padding: 1.625rem;
+  border-radius: 5px;
+}
+
+.header_menu a {
+  display: block;
+  padding: 0.625rem;
+  color: #2d314d;
+  text-align: center;
 }
 
 .header_links a {
   position: relative;
   font-size: 0.875rem;
   color: #9698a6;
-  -webkit-transition: color 200ms ease-in-out;
-  transition: color 200ms ease-in-out;
+  -webkit-transition: color 300ms ease-in-out;
+  transition: color 300ms ease-in-out;
 }
 
 .header_links a:not(:last-child) {
@@ -147,8 +253,8 @@ button,
   background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
   background: linear-gradient(to right, #31d35c, #2bb7da);
   opacity: 0;
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
 }
 
 .header_links a:hover {
@@ -157,18 +263,5 @@ button,
 
 .header_links a:hover::before {
   opacity: 1;
-  background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
-  background: linear-gradient(to right, #31d35c, #2bb7da);
-}
-
-.header_cta {
-  font-size: 0.875rem;
-  color: white;
-  -webkit-transition: opacity 300ms ease-in-out;
-  transition: opacity 300ms ease-in-out;
-}
-
-.header_cta:hover {
-  opacity: 0.75;
 }
 /*# sourceMappingURL=style.css.map */
