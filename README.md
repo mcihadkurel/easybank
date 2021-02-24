@@ -1,6 +1,5 @@
 # Easybank landing page
 
-# Calculator App
 
 This project contains floating and positioning elements. Given colors like make it seem as professional.
 
