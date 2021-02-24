@@ -1,0 +1,23 @@
+{
+  "name": "easybank",
+  "version": "1.0.0",
+  "description": "![Design preview for the Takasbank landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcihadkurel/easybank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcihadkurel/easybank/issues"
+  },
+  "homepage": "https://github.com/mcihadkurel/easybank#readme",
+  "dependencies": {
+    "prettier": "^2.2.1"
+  }
+}
